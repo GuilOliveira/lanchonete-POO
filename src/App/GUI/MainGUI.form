@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="App.GUI.MainGUI">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="5" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="883" height="576"/>
+    </constraints>
+    <properties>
+      <enabled value="false"/>
+      <maximumSize width="765" height="430"/>
+      <minimumSize width="765" height="430"/>
+      <preferredSize width="765" height="430"/>
+      <requestFocusEnabled value="true"/>
+    </properties>
+    <border type="none">
+      <color color="-4473925"/>
+    </border>
+    <children>
+      <grid id="3e580" binding="confirmationPanel" layout-manager="GridBagLayout">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="2" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="70"/>
+            <preferred-size width="-1" height="70"/>
+            <maximum-size width="-1" height="70"/>
+          </grid>
+        </constraints>
+        <properties>
+          <maximumSize width="400" height="75"/>
+          <minimumSize width="400" height="75"/>
+          <preferredSize width="400" height="75"/>
+        </properties>
+        <border type="etched" title="Confirmação"/>
+        <children>
+          <component id="a2c39" class="javax.swing.JLabel" binding="nameLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="30.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <labelFor value="b5a91"/>
+              <opaque value="false"/>
+              <text value="Nome do Cliente"/>
+            </properties>
+          </component>
+          <component id="b5a91" class="javax.swing.JTextField" binding="customerText">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+              <gridbag weightx="1.0" weighty="0.0"/>
+            </constraints>
+            <properties/>
+          </component>
+          <hspacer id="df59a">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="50.0" weighty="0.0"/>
+            </constraints>
+          </hspacer>
+          <component id="248b1" class="javax.swing.JLabel" binding="confirmationName">
+            <constraints>
+              <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="1.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Comprar"/>
+            </properties>
+          </component>
+          <component id="44d2" class="javax.swing.JButton" binding="confirm">
+            <constraints>
+              <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="1.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Ok"/>
+            </properties>
+          </component>
+          <component id="3d4a5" class="javax.swing.JLabel" binding="nameError">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="daebf" class="javax.swing.JButton" binding="visualizeButton" default-binding="true">
+            <constraints>
+              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Visualizar"/>
+            </properties>
+          </component>
+          <component id="c1975" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Registro"/>
+            </properties>
+          </component>
+          <hspacer id="8deea">
+            <constraints>
+              <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+          </hspacer>
+        </children>
+      </grid>
+      <grid id="169ba" binding="cheeseSelection" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="etched" title="Seleção de Queijo"/>
+        <children>
+          <component id="19bed" class="javax.swing.JCheckBox" binding="cheeseCheckBox1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="cheeseCheckBox1"/>
+              <text value="Coalho - R$ 1.50"/>
+            </properties>
+          </component>
+          <component id="ade81" class="javax.swing.JCheckBox" binding="cheeseCheckBox2">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="cheeseCheckBox2"/>
+              <text value="Minas - R$ 1.80"/>
+            </properties>
+          </component>
+          <component id="f6427" class="javax.swing.JCheckBox" binding="cheeseCheckBox3">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="cheeseCheckBox3"/>
+              <text value="Muçarela - R$ 2.00"/>
+            </properties>
+          </component>
+          <component id="504f3" class="javax.swing.JCheckBox" binding="cheeseCheckBox4">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="cheeseCheckBox4"/>
+              <text value="Cream Cheese - R$ 3.00"/>
+            </properties>
+          </component>
+          <component id="dd04c" class="javax.swing.JCheckBox" binding="cheeseCheckBox5">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="cheeseCheckBox5"/>
+              <text value="Gorgonzola - R$ 3.50"/>
+            </properties>
+          </component>
+          <component id="6d8fe" class="javax.swing.JComboBox" binding="cheeseComboBox5">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="cheeseComboBox5"/>
+            </properties>
+          </component>
+          <component id="13d4a" class="javax.swing.JComboBox" binding="cheeseComboBox1">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="cheeseComboBox1"/>
+            </properties>
+          </component>
+          <component id="63335" class="javax.swing.JComboBox" binding="cheeseComboBox2">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="cheeseComboBox2"/>
+            </properties>
+          </component>
+          <component id="7beb5" class="javax.swing.JComboBox" binding="cheeseComboBox3">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="cheeseComboBox3"/>
+            </properties>
+          </component>
+          <component id="e905d" class="javax.swing.JComboBox" binding="cheeseComboBox4">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="cheeseComboBox4"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="c767" binding="saucesPanel" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="etched" title="Seleção de Molhos"/>
+        <children>
+          <component id="c7a14" class="javax.swing.JCheckBox" binding="saucesCheckBox1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="saucesCheckBox1"/>
+              <text value="Maionese - R$ 0.50"/>
+            </properties>
+          </component>
+          <component id="c98f4" class="javax.swing.JCheckBox" binding="saucesCheckBox2">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="saucesCheckBox2"/>
+              <text value="Ketchup - R$ 0.50"/>
+            </properties>
+          </component>
+          <component id="a5d5b" class="javax.swing.JCheckBox" binding="saucesCheckBox3">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="saucesCheckBox3"/>
+              <text value="Maionese Temperada - R$ 0.70"/>
+            </properties>
+          </component>
+          <component id="31d3b" class="javax.swing.JCheckBox" binding="saucesCheckBox4">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="saucesCheckBox4"/>
+              <text value="Molho Tártaro - R$ 1.00"/>
+            </properties>
+          </component>
+          <component id="55265" class="javax.swing.JCheckBox" binding="saucesCheckBox5">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="saucesCheckBox5"/>
+              <text value="Barbecue - R$ 1.50"/>
+            </properties>
+          </component>
+          <component id="d5391" class="javax.swing.JComboBox" binding="saucesComboBox1">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="saucesComboBox1"/>
+            </properties>
+          </component>
+          <component id="4b6a6" class="javax.swing.JComboBox" binding="saucesComboBox2">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="saucesComboBox2"/>
+            </properties>
+          </component>
+          <component id="36864" class="javax.swing.JComboBox" binding="saucesComboBox3">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="saucesComboBox3"/>
+            </properties>
+          </component>
+          <component id="79d6e" class="javax.swing.JComboBox" binding="saucesComboBox4">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="saucesComboBox4"/>
+            </properties>
+          </component>
+          <component id="caa26" class="javax.swing.JComboBox" binding="saucesComboBox5">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="saucesComboBox5"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="da504" binding="meatPanel" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="etched" title="Seleção de Carnes"/>
+        <children>
+          <component id="53d6d" class="javax.swing.JCheckBox" binding="meatCheckBox6">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="meatCheckBox6"/>
+              <text value="Salami - R$ 2.00"/>
+            </properties>
+          </component>
+          <component id="96b58" class="javax.swing.JCheckBox" binding="meatCheckBox1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="meatCheckBox1"/>
+              <text value="Mortadela - R$ 0.50"/>
+            </properties>
+          </component>
+          <component id="af5e7" class="javax.swing.JCheckBox" binding="meatCheckBox2">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="meatCheckBox2"/>
+              <text value="Apresuntado - R$ 1.00"/>
+            </properties>
+          </component>
+          <component id="e4898" class="javax.swing.JCheckBox" binding="meatCheckBox3">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="meatCheckBox3"/>
+              <text value="Bacon - R$ 1.30"/>
+            </properties>
+          </component>
+          <component id="819a3" class="javax.swing.JCheckBox" binding="meatCheckBox4">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="meatCheckBox4"/>
+              <text value="Presunto - R$ 1.60"/>
+            </properties>
+          </component>
+          <component id="90c6e" class="javax.swing.JCheckBox" binding="meatCheckBox5">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="meatCheckBox5"/>
+              <text value="Pepperoni - R$ 1.80"/>
+            </properties>
+          </component>
+          <component id="8516f" class="javax.swing.JComboBox" binding="meatComboBox6">
+            <constraints>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="meatComboBox6"/>
+            </properties>
+          </component>
+          <component id="d2ee9" class="javax.swing.JComboBox" binding="meatComboBox5">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="meatComboBox5"/>
+            </properties>
+          </component>
+          <component id="c0faf" class="javax.swing.JComboBox" binding="meatComboBox4">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="meatComboBox4"/>
+            </properties>
+          </component>
+          <component id="8245a" class="javax.swing.JComboBox" binding="meatComboBox3">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="meatComboBox3"/>
+            </properties>
+          </component>
+          <component id="622b3" class="javax.swing.JComboBox" binding="meatComboBox2">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="meatComboBox2"/>
+            </properties>
+          </component>
+          <component id="8dc8c" class="javax.swing.JComboBox" binding="meatComboBox1">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="meatComboBox1"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="10135" binding="breadSelection" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <inheritsPopupMenu value="false"/>
+          <name value=""/>
+        </properties>
+        <border type="etched" title="Seleção do Pão"/>
+        <children>
+          <component id="e9a5d" class="javax.swing.JRadioButton" binding="breadButton1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="breadButton1"/>
+              <text value="Pão Francês - R$ 0.25"/>
+            </properties>
+          </component>
+          <component id="74312" class="javax.swing.JRadioButton" binding="breadButton2">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="breadButton2"/>
+              <text value="Pão Carteira - R$ 0.30"/>
+            </properties>
+          </component>
+          <component id="3129e" class="javax.swing.JRadioButton" binding="breadButton3">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="breadButton3"/>
+              <text value="Pão de Hambúrguer - R$ 0.70"/>
+            </properties>
+          </component>
+          <component id="15972" class="javax.swing.JRadioButton" binding="breadButton4">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="breadButton4"/>
+              <text value="Pão Árabe - R$ 1.30"/>
+            </properties>
+          </component>
+          <component id="f2f4a" class="javax.swing.JComboBox" binding="breadComboBox1">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="breadComboBox1"/>
+            </properties>
+          </component>
+          <component id="6b8fd" class="javax.swing.JComboBox" binding="breadComboBox2">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="breadComboBox2"/>
+            </properties>
+          </component>
+          <component id="e7fd" class="javax.swing.JComboBox" binding="breadComboBox3">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="breadComboBox3"/>
+            </properties>
+          </component>
+          <component id="8795e" class="javax.swing.JComboBox" binding="breadComboBox4">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="2"/>
+                <item value="3"/>
+                <item value="4"/>
+              </model>
+              <name value="breadComboBox4"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="72b6b" binding="greensPanel" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="1" row-span="3" col-span="1" vsize-policy="1" hsize-policy="1" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="etched" title="Seleção de Verduras"/>
+        <children>
+          <component id="ecf30" class="javax.swing.JCheckBox" binding="greensCheckBox1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="greensCheckBox1"/>
+              <text value="Cebola - R$ 0.30"/>
+            </properties>
+          </component>
+          <component id="18feb" class="javax.swing.JCheckBox" binding="greensCheckBox2">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="greensCheckBox2"/>
+              <text value="Pimentão - R$ 0.45"/>
+            </properties>
+          </component>
+          <component id="ee7e0" class="javax.swing.JCheckBox" binding="greensCheckBox3">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="greensCheckBox3"/>
+              <text value="Tomate - R$ 0.50"/>
+            </properties>
+          </component>
+          <component id="33208" class="javax.swing.JComboBox" binding="greensComboBox1">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+              </model>
+              <name value="greensComboBox1"/>
+            </properties>
+          </component>
+          <component id="88952" class="javax.swing.JComboBox" binding="greensComboBox2">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+              </model>
+              <name value="greensComboBox2"/>
+            </properties>
+          </component>
+          <component id="284ec" class="javax.swing.JComboBox" binding="greensComboBox3">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+              </model>
+              <name value="greensComboBox3"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="6405f" binding="othersPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="1" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="etched" title="Outros"/>
+        <children>
+          <component id="ec07" class="javax.swing.JCheckBox" binding="othersCheckBox1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="othersCheckBox1"/>
+              <text value="Batata Palha - R$ 1.00"/>
+            </properties>
+          </component>
+          <component id="e8b1b" class="javax.swing.JCheckBox" binding="othersCheckBox2">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="othersCheckBox2"/>
+              <text value="Ovo - R$ 1.00"/>
+            </properties>
+          </component>
+          <component id="2b713" class="javax.swing.JComboBox" binding="othersComboBox2">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+              </model>
+              <name value="othersComboBox2"/>
+            </properties>
+          </component>
+          <component id="bcb76" class="javax.swing.JComboBox" binding="othersComboBox1">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <model>
+                <item value="1"/>
+                <item value="2"/>
+              </model>
+              <name value="othersComboBox1"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="1bde8" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="etched" title="Valor Total:"/>
+        <children>
+          <component id="b8286" class="javax.swing.JLabel" binding="totalValueLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <name value="totalValueLabel"/>
+              <text value="R$ 0,00"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+  <buttonGroups>
+    <group name="breadGroup1">
+      <member id="e9a5d"/>
+      <member id="74312"/>
+      <member id="3129e"/>
+      <member id="15972"/>
+    </group>
+  </buttonGroups>
+</form>

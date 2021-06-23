@@ -7,8 +7,8 @@ public class Ingredient implements IIngredient{
     private Boolean inSandwich;
 
     public Ingredient(String name, double price){
-        this.name = name;
-        this.price = price;
+        setName(name);
+        setPrice(price);
     }
     @Override
     public void setInSandwich(Boolean inSandwich) {

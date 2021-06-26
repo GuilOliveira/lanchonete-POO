@@ -1,11 +1,11 @@
 package App.Sandwich;
 
 public class Ingredient implements IIngredient{
-    private String name;
-    private double price;
-    private int amount;
-    private Boolean inSandwich;
-
+    private String name;                                // A classe ingrediente assina o contrato
+    private double price;                               // da interface, logo, é obrigada a implementar
+    private int amount;                                 // seus métodos, além de ter métodos privados que
+    private Boolean inSandwich;                         // só podem ser chamados pelo construtor da classe,
+                                                        // impedindo assim o acesso por outras classes.
     public Ingredient(String name, double price){
         setName(name);
         setPrice(price);

@@ -23,10 +23,10 @@ public class ConfirmGUI {
     private Sandwich sandwich;
     private double price;
 
-    public ConfirmGUI(Sandwich sandwich, String customer, double price){
-        this.customer = customer;
-        this.sandwich = sandwich;
-        this.price = price;
+    public ConfirmGUI(Sandwich sandwich, String customer, double price){                // Aqui é criada a GUI para a confirmar
+        this.customer = customer;                                                       // a compra, onde aparecem os ingredientes
+        this.sandwich = sandwich;                                                       // e o valor total a ser pago, o cliente
+        this.price = price;                                                             // pode cancelar a compra.
         setOptions(sandwich);
         createCancelButtonListeners();
         createConfirmButtonListeners();
@@ -34,11 +34,11 @@ public class ConfirmGUI {
 
 
     }
-    private void setOptions(Sandwich sandwich){
-        for(Ingredient ingredient:sandwich.getIngredients()){
-            if(ingredient.getName().startsWith("Pão")){
-                populate(ingredient);
-                text.append("----------------------\n");
+    private void setOptions(Sandwich sandwich){                                         // Aqui é definida a função para listar
+        for(Ingredient ingredient:sandwich.getIngredients()){                           // os ingredientes em uma textBox.
+            if(ingredient.getName().startsWith("Pão")){                                 // É usado um loop para percorrer os
+                populate(ingredient);                                                   // ingredientes e a função populate
+                text.append("----------------------\n");                                // para popular e formatar as informações.
             }
         }
         for(Ingredient ingredient:sandwich.getIngredients()){
@@ -56,11 +56,11 @@ public class ConfirmGUI {
         text.append("\n");
     }
     private void createConfirmButtonListeners(){
-        confirmButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Database.addDatabase(new Order(customer, sandwich, price));
-                JButton button = (JButton)e.getSource();
+        confirmButton.addActionListener(new ActionListener() {                          // Aqui é criado um ActionListener
+            @Override                                                                   // para ser executado quando
+            public void actionPerformed(ActionEvent e) {                                // o botão de confirmação for
+                Database.addDatabase(new Order(customer, sandwich, price));             // pressionado, que confirma a
+                JButton button = (JButton)e.getSource();                                // compra.
                 Window window = SwingUtilities.windowForComponent( button );
                 window.dispose();
             }
@@ -68,8 +68,8 @@ public class ConfirmGUI {
 
     }
     private void createCancelButtonListeners(){
-        cancelButton.addActionListener(new ActionListener() {
-            @Override
+        cancelButton.addActionListener(new ActionListener() {                           // ActionListener para o botão
+            @Override                                                                   // de cancelar, que fecha a janela
             public void actionPerformed(ActionEvent e) {
                 JButton button = (JButton)e.getSource();
                 Window window = SwingUtilities.windowForComponent( button );

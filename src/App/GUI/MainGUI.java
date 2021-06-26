@@ -12,10 +12,10 @@ import java.util.Arrays;
 
 public class MainGUI{
     //region Declaração dos elementos da interface
-    private JPanel mainPanel;
-    private JPanel confirmationPanel;
-    private JLabel nameLabel;
-    private JTextField customerText;
+    private JPanel mainPanel;                                                       // Aqui fica a declaração dos elementos
+    private JPanel confirmationPanel;                                               // localizados na interface, suas posições
+    private JLabel nameLabel;                                                       // e outras informações ficam gravados
+    private JTextField customerText;                                                // nos arquivos .form
     private JButton confirm;
     private JLabel confirmationName;
     private JPanel breadSelection;
@@ -105,43 +105,43 @@ public class MainGUI{
     private JMenu ordersMenus;
     private Sandwich sandwich = new Sandwich();
     //endregion ------
-    JCheckBox[] checkBoxes = new JCheckBox[]{cheeseCheckBox1, cheeseCheckBox2, cheeseCheckBox3, cheeseCheckBox4, cheeseCheckBox5, othersCheckBox1,
-            othersCheckBox2, greensCheckBox1, greensCheckBox2, greensCheckBox3, saucesCheckBox1, saucesCheckBox2, saucesCheckBox3, saucesCheckBox4,
-            saucesCheckBox5, meatCheckBox6, meatCheckBox1, meatCheckBox2, meatCheckBox3, meatCheckBox4, meatCheckBox5};
-    JComboBox[] comboBoxes = new JComboBox[]{breadComboBox1, breadComboBox2, breadComboBox3, breadComboBox4, cheeseComboBox5,
+    JCheckBox[] checkBoxes = new JCheckBox[]{cheeseCheckBox1, cheeseCheckBox2, cheeseCheckBox3, cheeseCheckBox4, cheeseCheckBox5, othersCheckBox1,                  // uma lista com todas as CheckBoxes, ComboBoxes
+            othersCheckBox2, greensCheckBox1, greensCheckBox2, greensCheckBox3, saucesCheckBox1, saucesCheckBox2, saucesCheckBox3, saucesCheckBox4,                 // e RadioButtons, para depois no código servirem
+            saucesCheckBox5, meatCheckBox6, meatCheckBox1, meatCheckBox2, meatCheckBox3, meatCheckBox4, meatCheckBox5};                                             // como fonte dos nomes dos ingredientes e seus
+    JComboBox[] comboBoxes = new JComboBox[]{breadComboBox1, breadComboBox2, breadComboBox3, breadComboBox4, cheeseComboBox5,                                       // valores.
             cheeseComboBox1, cheeseComboBox2, cheeseComboBox3, cheeseComboBox4, othersComboBox2, othersComboBox1, saucesComboBox1,
             saucesComboBox2, saucesComboBox3, saucesComboBox4, saucesComboBox5, meatComboBox6, meatComboBox5,
             meatComboBox4, meatComboBox3, meatComboBox2, meatComboBox1, greensComboBox1, greensComboBox2, greensComboBox3};
-
     JRadioButton[] radioButtons = new JRadioButton[]{breadButton1, breadButton2, breadButton3, breadButton4};
-    String noText = customerText.getText();;
 
+    String noText = customerText.getText();                 // define o texto vazio, para compara-lo
+                                                            // e ver se o cliente digitou algo
     public MainGUI() {
         newSandwich();
-        createCheckBoxListeners();
-        createRadioButtonListeners();
-        createMainButtonListeners();
-        createComboBoxListeners();
+        createCheckBoxListeners();                          // O construtor da classe chama todos os
+        createRadioButtonListeners();                       // métodos, para criar um novo sanduiche
+        createMainButtonListeners();                        // e criar os Listeners para os elementos
+        createComboBoxListeners();                          // do programa
         createOrdersButtonListeners();
     }
-    private void createOrdersButtonListeners(){
+    private void createOrdersButtonListeners(){                                                 // Chama o método que invoca a janela do banco de dados
         visualizeButton.addActionListener(new MenuGUI(Database.getDatabase()));
     }
     private void createMainButtonListeners(){
-        confirm.addActionListener(new ActionListener() {
+        confirm.addActionListener(new ActionListener() {                                // Cria um Listener para o botão de compra
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(customerText.getText().equals(noText)){
-                    JOptionPane.showMessageDialog(null, "Insira um nome para realizar a compra.", "Erro", JOptionPane.ERROR_MESSAGE);
-                }
+                if(customerText.getText().equals(noText)){                                                                                                                          // Para evitar que o lanche seja criado sem
+                    JOptionPane.showMessageDialog(null, "Insira um nome para realizar a compra.", "Erro", JOptionPane.ERROR_MESSAGE);                 // comprador e nem pão, foram criadas as
+                }                                                                                                                                                                   // condicionais.
                 else if(!(breadButton1.isSelected() || breadButton2.isSelected()|| breadButton3.isSelected() || breadButton4.isSelected())){
                     JOptionPane.showMessageDialog(null, "Selecione o pão.", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
                 else{
                     JFrame display = new JFrame("Confirmação");
-                    display.setContentPane(new ConfirmGUI(sandwich, customerText.getText(), Double.parseDouble(sandwich.getPrice().replace(",","."))).getMasterPanel());
-                    display.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                    display.setResizable(false);
+                    display.setContentPane(new ConfirmGUI(sandwich, customerText.getText(), Double.parseDouble(sandwich.getPrice().replace(",","."))).getMasterPanel());        // Chama o método para invocação da tela de
+                    display.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);                                                                                                                    // confirmação, faz as configurações e
+                    display.setResizable(false);                                                                                                                                                  // exibe a tela
                     display.pack();
                     display.setVisible(true);
 
@@ -151,29 +151,29 @@ public class MainGUI{
         });
     }
     private void createRadioButtonListeners(){
-        for(JRadioButton radioButton:radioButtons){
-            for(JComboBox comboBox:comboBoxes){
-                String[] actualField = radioButton.getName().split("Button");
-                if (Arrays.equals(actualField, comboBox.getName().split("ComboBox"))){
-                    radioButton.addItemListener(new ItemListener() {
-                        JComboBox comboBox;
+        for(JRadioButton radioButton:radioButtons){                                                                                                         // Aqui são criados os Listeners para os RadioButtons.
+            for(JComboBox comboBox:comboBoxes){                                                                                                             // Para evitar a alta replicação de código, foi feito
+                String[] actualField = radioButton.getName().split("Button");                                                                         // um loop para iterar sobre a lista de RadioButtons
+                if (Arrays.equals(actualField, comboBox.getName().split("ComboBox"))){                                                                // que são comparados com as ComboBoxes pelo seu
+                    radioButton.addItemListener(new ItemListener() {                                                                                        // nome, se os dois forem iguais, então significa que os items
+                        JComboBox comboBox;                                                                                                                 // pertencem ao mesmo ingrediente, esse código só é executado uma vez.
                         Sandwich sandwich;
                         JRadioButton radioButton;
                         @Override
                         public void itemStateChanged(ItemEvent e) {
-                            String name = radioButton.getText().split( " - R\\$ ")[0];
+                            String name = radioButton.getText().split( " - R\\$ ")[0];      // Separa o nome e valor dos ingredientes
                             String value = radioButton.getText().split( " - R\\$ ")[1];
-                            if(comboBox.isEnabled()){
-                                comboBox.setEnabled(false);
-                                sandwich.updateIngredients(name, value, Integer.parseInt(comboBox.getSelectedItem().toString()), false);
+                            if(comboBox.isEnabled()){                                                                                                       // Se o RadioButton for ativado, ele deixa a ComboBox dísponível
+                                comboBox.setEnabled(false);                                                                                                 // para edição, da um update no sanduiche com os ingredientes e
+                                sandwich.updateIngredients(name, value, Integer.parseInt(comboBox.getSelectedItem().toString()), false);         // atualiza o preço total da GUI.
                                 updatePrice();
-                            }else{
-                                comboBox.setEnabled(true);
+                            }else{                                                                                                                          // Já se o RádioButton for desátivado, ele bloqueia a ComboBox,
+                                comboBox.setEnabled(true);                                                                                                  // tira o ingrediente e atualiza o preço.
                                 sandwich.updateIngredients(name, value, Integer.parseInt(comboBox.getSelectedItem().toString()), true);
                                 updatePrice();
                             }
                         }
-                        private ItemListener setParams(JComboBox comboBox, Sandwich sandwich, JRadioButton radioButton) {
+                        private ItemListener setParams(JComboBox comboBox, Sandwich sandwich, JRadioButton radioButton) {               // Passagem de parâmetros para classes anônimas
                             this.comboBox = comboBox;
                             this.sandwich = sandwich;
                             this.radioButton = radioButton;
@@ -185,29 +185,29 @@ public class MainGUI{
         }
     }
     private void createCheckBoxListeners(){
-        for(JCheckBox checkBox:checkBoxes){
-            for(JComboBox comboBox:comboBoxes){
-                String[] actualField = checkBox.getName().split("CheckBox");
-                if (Arrays.equals(actualField, comboBox.getName().split("ComboBox"))){
-                    checkBox.addActionListener(new ActionListener() {
-                        Sandwich sandwich;
+        for(JCheckBox checkBox:checkBoxes){                                                                                             // Aqui são criados os Listeners para as CheckBoxes.
+            for(JComboBox comboBox:comboBoxes){                                                                                         // Para evitar a alta replicação de código, foi feito
+                String[] actualField = checkBox.getName().split("CheckBox");                                                      // um loop para iterar sobre a lista de CheckBoxes
+                if (Arrays.equals(actualField, comboBox.getName().split("ComboBox"))){                                            // que são comparadas com as ComboBoxes pelo seu
+                    checkBox.addActionListener(new ActionListener() {                                                                   // nome, se os dois forem iguais, então significa que os items
+                        Sandwich sandwich;                                                                                              // pertencem ao mesmo ingrediente, esse código só é executado uma vez.
                         JComboBox comboBox;
                         JCheckBox checkBox;
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            String name = checkBox.getText().split( " - R\\$ ")[0];
+                            String name = checkBox.getText().split( " - R\\$ ")[0];         // Separa o nome e valor dos ingredientes
                             String value = checkBox.getText().split( " - R\\$ ")[1];
-                            if(comboBox.isEnabled()){
-                                comboBox.setEnabled(false);
-                                sandwich.updateIngredients(name, value, Integer.parseInt(comboBox.getSelectedItem().toString()), false);
+                            if(comboBox.isEnabled()){                                                                                                           // Se a CheckBox for ativada, ela deixa a ComboBox disponível
+                                comboBox.setEnabled(false);                                                                                                     // para edição, da um update no sanduiche com os ingredientes e
+                                sandwich.updateIngredients(name, value, Integer.parseInt(comboBox.getSelectedItem().toString()), false);             // atualiza o preço total da GUI.
                                 updatePrice();
-                            }else{
+                            }else{                                                                                                                              // Senão, ele bloqueia a ComboBox, tira o ingrediente e atualiza o preço.
                                 comboBox.setEnabled(true);
                                 sandwich.updateIngredients(name, value, Integer.parseInt(comboBox.getSelectedItem().toString()), true);
                                 updatePrice();
                             }
                         }
-                        private ActionListener setParams(JComboBox comboBox, Sandwich sandwich, JCheckBox checkBox){
+                        private ActionListener setParams(JComboBox comboBox, Sandwich sandwich, JCheckBox checkBox){                    // Passagem de parâmetros para classes anônimas
                             this.comboBox = comboBox;
                             this.sandwich = sandwich;
                             this.checkBox = checkBox;
@@ -218,12 +218,12 @@ public class MainGUI{
             }
         }
     }
-    private void createComboBoxListeners(){
-        for(JComboBox comboBox:comboBoxes){
-            for(JCheckBox checkBox:checkBoxes){
-                String[] actualCheckField = checkBox.getName().split("CheckBox");
-                if (Arrays.equals(actualCheckField, comboBox.getName().split("ComboBox"))){
-                    comboActionReceiver(comboBox, checkBox);
+    private void createComboBoxListeners(){                                                                     // Método para criação dos Listeners das ComboBoxes, que
+        for(JComboBox comboBox:comboBoxes){                                                                     // são chamados a cada alteração da ComboBox, esse
+            for(JCheckBox checkBox:checkBoxes){                                                                 // método vai percorrer por todas as ComboBoxes e compará-las
+                String[] actualCheckField = checkBox.getName().split("CheckBox");                         // com as CheckBoxes e os RadioButtons, para cada combinação
+                if (Arrays.equals(actualCheckField, comboBox.getName().split("ComboBox"))){               // será criado um Listener para a sua ComboBox correspondente,
+                    comboActionReceiver(comboBox, checkBox);                                                    // usando o método comboActionReceiver, que usa do polimorfismo.
                 }
             }
             for(JRadioButton radioButton:radioButtons){
@@ -235,9 +235,9 @@ public class MainGUI{
         }
     }
     private void comboActionReceiver(JComboBox comboBox, JCheckBox checkBox){
-        comboBox.addActionListener(new ActionListener() {
-            Sandwich sandwich;
-            JComboBox comboBox;
+        comboBox.addActionListener(new ActionListener() {                                                                               // Para a CheckBox: é resgatado, o nome e valor do ingrediente,
+            Sandwich sandwich;                                                                                                          // e o método updateIngredients do sanduiche atual é acionado,
+            JComboBox comboBox;                                                                                                         // o ingrediente então é atualizado com o valor da ComboBox.
             JCheckBox checkBox;
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -254,9 +254,9 @@ public class MainGUI{
             }
         }.setParams(comboBox, sandwich, checkBox));}
 
-        private void comboActionReceiver(JComboBox comboBox, JRadioButton radioButton){
-            comboBox.addActionListener(new ActionListener() {
-                Sandwich sandwich;
+        private void comboActionReceiver(JComboBox comboBox, JRadioButton radioButton){                                                 // Para o RadioButton: é resgatado, o nome e valor do ingrediente,
+            comboBox.addActionListener(new ActionListener() {                                                                           // e o método updateIngredients do sanduiche atual é acionado,
+                Sandwich sandwich;                                                                                                      // o ingrediente então é atualizado com o valor do RadioButton.
                 JComboBox comboBox;
                 JRadioButton radioButton;
                 @Override
@@ -278,7 +278,7 @@ public class MainGUI{
         this.sandwich = new Sandwich();
     }
     private void updatePrice(){
-        totalValueLabel.setText("R$ "+sandwich.getPrice());
+        totalValueLabel.setText("R$ "+sandwich.getPrice());                         // O preço total da compra é atualizado
     }
     public JPanel getMainPanel() {
         return mainPanel;

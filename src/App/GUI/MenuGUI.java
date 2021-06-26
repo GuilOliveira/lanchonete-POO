@@ -9,23 +9,23 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class MenuGUI implements ActionListener {
-
-    private JPanel mainPanel;
-    private JTextArea orderTextArea;
+                                                                                                   // Classe que gera o menu com a base
+    private JPanel mainPanel;                                                                      // de dados contendo os lanches comprados
+    private JTextArea orderTextArea;                                                               // e os clientes.
     StringBuilder text = new StringBuilder();
     ArrayList<Order> database;
 
     public MenuGUI(ArrayList<Order> database) {
-        this.database = database;
+        this.database = database;                       // Importando o database para a classe
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        JFrame dialog = new JFrame("Pedidos");
-        MenuGUI menuGUI = new MenuGUI(database);
-        dialog.setContentPane(menuGUI.getMainPanel());
+    public void actionPerformed(ActionEvent e) {                                                    // Essa ActionEvent inicia a janela contida
+        JFrame dialog = new JFrame("Pedidos");                                                 // na mesma, e passa as configurações
+        MenuGUI menuGUI = new MenuGUI(database);                                                    // necessárias. Também chama os métodos
+        dialog.setContentPane(menuGUI.getMainPanel());                                              // necessários para a exibição do conteúdo
         dialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        dialog.setResizable(false);
+        //dialog.setResizable(false);
         dialog.pack();
         dialog.setVisible(true);
         setDataVisualization();
@@ -36,11 +36,11 @@ public class MenuGUI implements ActionListener {
     private JPanel getMainPanel() {
         return mainPanel;
     }
-    private void setDataVisualization(){
-        text.delete(0, text.length());
-        text.append("------ Lista de Pedidos ------\n");
-        text.append("Numero | Nome (preço) - lanche\n\n");
-        for(Order order:database){
+    private void setDataVisualization(){                                                            // Limpa os dados antigos e substitui
+        text.delete(0, text.length());                                                              // Pelos novos, e formata o ambiente
+        text.append("------ Lista de Pedidos ------\n");                                            // para a função ordersToLines, que
+        text.append("Numero | Nome (preço) - lanche\n\n");                                          // recebe o banco de dados e transforma
+        for(Order order:database){                                                                  // em um formato de texto.
             ordersToLines(order);
         }
     }

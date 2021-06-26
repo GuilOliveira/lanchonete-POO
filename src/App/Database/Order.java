@@ -3,10 +3,10 @@ package App.Database;
 import App.Sandwich.Sandwich;
 
 public class Order extends ImplementId {
-    private int id;
-    private String customer;
-    private Sandwich sandwich;
-    private double price;
+    private int id;                                                     // Aqui são definidos os pedidos, cada
+    private String customer;                                            // pedido deve ter um id, um cliente,
+    private Sandwich sandwich;                                          // o sanduíche que ele comprou, e
+    private double price;                                               // o preço final do lanche
     public Order(String customer, Sandwich sandwich, double price){
         id = super.newId();
         this.customer = customer;

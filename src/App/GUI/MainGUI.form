@@ -384,7 +384,7 @@
             </constraints>
             <properties>
               <name value="meatCheckBox6"/>
-              <text value="Salami - R$ 2.00"/>
+              <text value="Salame - R$ 2.00"/>
             </properties>
           </component>
           <component id="96b58" class="javax.swing.JCheckBox" binding="meatCheckBox1">

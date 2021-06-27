@@ -52,7 +52,7 @@ public class ConfirmGUI {
     private void populate(Ingredient ingredient){
         text.append(ingredient.getName());
         text.append(" - ");
-        text.append(ingredient.getAmount());
+        text.append("R$ "+ ingredient.getAmount()*ingredient.getPrice());
         text.append("\n");
     }
     private void createConfirmButtonListeners(){
